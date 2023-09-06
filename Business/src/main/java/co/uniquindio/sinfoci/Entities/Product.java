@@ -1,14 +1,14 @@
 package co.uniquindio.sinfoci.Entities;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @ToString(onlyExplicitlyIncluded = true)
 public class Product {
 

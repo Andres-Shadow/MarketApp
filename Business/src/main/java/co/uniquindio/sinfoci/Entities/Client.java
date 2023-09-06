@@ -1,9 +1,7 @@
 package co.uniquindio.sinfoci.Entities;
 
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +9,8 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @ToString(onlyExplicitlyIncluded = true)
 public class Client {
 
