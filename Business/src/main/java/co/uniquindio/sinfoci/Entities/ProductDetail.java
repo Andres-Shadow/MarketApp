@@ -12,6 +12,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class ProductDetail {
+
+    //TABLE FIELDS
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ToString.Include
@@ -22,5 +24,13 @@ public class ProductDetail {
     @Column(nullable = false)
     @ToString.Include
     private Integer finalPrice;
+
+    //RELATIONSHIPS
+
+    @ManyToOne
+    private ClientOrder order;
+
+    @OneToOne(mappedBy = "detail")
+    private Product product;
 
 }

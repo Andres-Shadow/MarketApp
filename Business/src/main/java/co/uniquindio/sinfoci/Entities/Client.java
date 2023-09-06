@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -24,4 +25,8 @@ public class Client {
     @Column(nullable = false, length = 100)
     @ToString.Include
     private String surname;
+
+    //RELATIONSHIPS
+    @ManyToMany(mappedBy = "clients")
+    List<ClientOrder> orders;
 }

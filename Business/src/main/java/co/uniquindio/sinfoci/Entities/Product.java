@@ -24,5 +24,10 @@ public class Product {
     @ToString.Include
     private float price;
 
+    //RELATIONSHIPS
+
+    @OneToOne
+    private ProductDetail detail;
+
 
 }

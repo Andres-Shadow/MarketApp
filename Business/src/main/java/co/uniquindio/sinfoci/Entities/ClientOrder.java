@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -24,4 +25,12 @@ public class ClientOrder {
     @Column(nullable = false)
     @ToString.Include
     private Float price;
+
+    //RELATIONSHIPS
+
+    @ManyToMany
+    List<Client> clients;
+
+    @OneToMany(mappedBy = "order")
+    List<ProductDetail> productDetail;
 }
