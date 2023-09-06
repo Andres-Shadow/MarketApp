@@ -26,7 +26,7 @@ public class Product {
 
     //RELATIONSHIPS
 
-    @OneToOne
+    @OneToOne(mappedBy = "product")
     private ProductDetail detail;
 
 

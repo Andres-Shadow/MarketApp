@@ -30,7 +30,7 @@ public class ProductDetail {
     @ManyToOne
     private ClientOrder order;
 
-    @OneToOne(mappedBy = "detail")
+    @OneToOne
     private Product product;
 
 }
