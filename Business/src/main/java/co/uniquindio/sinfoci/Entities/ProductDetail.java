@@ -28,9 +28,11 @@ public class ProductDetail {
     //RELATIONSHIPS
 
     @ManyToOne
+    @ToString.Exclude
     private ClientOrder order;
 
     @OneToOne
+    @ToString.Exclude
     private Product product;
 
 }

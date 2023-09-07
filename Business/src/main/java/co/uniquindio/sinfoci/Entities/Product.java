@@ -27,6 +27,7 @@ public class Product {
     //RELATIONSHIPS
 
     @OneToOne(mappedBy = "product")
+    @ToString.Exclude
     private ProductDetail detail;
 
 
