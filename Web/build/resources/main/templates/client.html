@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #0073e6;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            width: 160px; /* Ancho igual al de los botones */
+            border-radius: 10px 10px 0 0;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button-container button:hover {
+            background-color: #0097a7;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a href="/">
+        CLIENT DATA
+    </a>
+</div>
+<div class="button-container">
+    <button>Create</button>
+    <button>Update</button>
+    <button>Delete</button>
+    <button>List</button>
+</div>
+</body>
+</html>

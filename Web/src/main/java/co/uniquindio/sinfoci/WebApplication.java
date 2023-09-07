@@ -1,5 +1,6 @@
 package co.uniquindio.sinfoci;
 
+import co.uniquindio.sinfoci.Entities.Client;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -10,9 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class WebApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
-    }
+    public static void main(String[] args) {SpringApplication.run(WebApplication.class, args);}
 
     @Controller
     public static class WebController {
@@ -21,15 +20,8 @@ public class WebApplication {
         public String index() {
             return "index";
         }
+
     }
 
-    @Bean
-    public WebMvcConfigurer webMvcConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addResourceHandlers(ResourceHandlerRegistry registry) {
-                registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-            }
-        };
-    }
+
 }
