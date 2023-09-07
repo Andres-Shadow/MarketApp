@@ -3,11 +3,13 @@ package co.uniquindio.sinfoci.ServiceImpl;
 import co.uniquindio.sinfoci.Entities.ClientOrder;
 import co.uniquindio.sinfoci.Repositories.ClientOrderRepository;
 import co.uniquindio.sinfoci.Services.ClientOrderService;
+import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ClientOrderImpl implements ClientOrderService {
 
     //DATA REPOSITORES

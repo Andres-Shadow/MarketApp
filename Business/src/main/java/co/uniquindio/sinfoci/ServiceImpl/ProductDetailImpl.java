@@ -3,10 +3,11 @@ package co.uniquindio.sinfoci.ServiceImpl;
 import co.uniquindio.sinfoci.Entities.ProductDetail;
 import co.uniquindio.sinfoci.Repositories.ProductDetailRepository;
 import co.uniquindio.sinfoci.Services.ProductDetailService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ProductDetailImpl implements ProductDetailService {
 
     private ProductDetailRepository detailRepo;
