@@ -35,4 +35,11 @@ public class ClientOrder {
     @OneToMany(mappedBy = "order")
     @ToString.Exclude
     List<ProductDetail> productDetail;
+
+    @Builder
+    public ClientOrder(Integer id, String name, Float price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 }

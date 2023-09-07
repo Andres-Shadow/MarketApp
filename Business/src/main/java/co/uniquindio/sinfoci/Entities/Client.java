@@ -30,4 +30,11 @@ public class Client {
     @ManyToMany(mappedBy = "clients")
     @ToString.Exclude
     List<ClientOrder> orders;
+
+    @Builder
+    public Client(Integer ID, String name, String surname) {
+        this.ID = ID;
+        this.name = name;
+        this.surname = surname;
+    }
 }
