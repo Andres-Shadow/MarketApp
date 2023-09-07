@@ -3,10 +3,11 @@ package co.uniquindio.sinfoci.ServiceImpl;
 import co.uniquindio.sinfoci.Entities.Product;
 import co.uniquindio.sinfoci.Repositories.ProductRepository;
 import co.uniquindio.sinfoci.Services.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ProductImpl implements ProductService {
 
     //DATA REPOSITORIES

@@ -1,0 +1,1 @@
+insert into client values (2, "matias", "lopez");

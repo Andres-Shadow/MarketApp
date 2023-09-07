@@ -3,10 +3,12 @@ package co.uniquindio.sinfoci.ServiceImpl;
 import co.uniquindio.sinfoci.Entities.Client;
 import co.uniquindio.sinfoci.Repositories.ClientRepository;
 import co.uniquindio.sinfoci.Services.ClientService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ClientServiceImpl implements ClientService {
 
     //DATA REPOSITORIES
