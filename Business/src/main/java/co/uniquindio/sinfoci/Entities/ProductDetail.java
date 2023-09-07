@@ -35,4 +35,10 @@ public class ProductDetail {
     @ToString.Exclude
     private Product product;
 
+    @Builder
+    public ProductDetail(Integer id, Integer amount, Integer finalPrice) {
+        this.id = id;
+        this.amount = amount;
+        this.finalPrice = finalPrice;
+    }
 }
