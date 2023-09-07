@@ -29,8 +29,10 @@ public class ClientOrder {
     //RELATIONSHIPS
 
     @ManyToMany
+    @ToString.Exclude
     List<Client> clients;
 
     @OneToMany(mappedBy = "order")
+    @ToString.Exclude
     List<ProductDetail> productDetail;
 }
