@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +61,20 @@
     <button>Create</button>
     <button>Update</button>
     <button>Delete</button>
-    <button>List</button>
 </div>
+
+<div class="button-container">
+    <table>
+        <tbody>
+        <tr th:each="client: ${clients}" th:object="${client}">
+            <td>
+                <div th:text="*{name}"></div>
+                <p th:text="*{surname}"></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>

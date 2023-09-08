@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/client")
+@RequestMapping("/client.html")
 public class ClientController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class ClientController {
     @GetMapping("")
     public ModelAndView listarClientes(@PageableDefault(sort = "name", size = 5)Pageable pageable){
         List<Client> clients = csl.listAllClients();
-        return new ModelAndView("test").addObject("clients", clients);
+        return new ModelAndView("client").addObject("clients", clients);
     }
 
 
