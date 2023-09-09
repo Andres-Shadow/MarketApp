@@ -19,14 +19,19 @@ import java.util.List;
 @RequestMapping("/client.html")
 public class ClientController {
 
-    @Autowired
-    private ClientServiceImpl csl;
+    private final ClientServiceImpl csl;
+
+    public ClientController(ClientServiceImpl csl) {
+        this.csl = csl;
+    }
 
     @GetMapping("")
     public ModelAndView listarClientes(@PageableDefault(sort = "name", size = 5)Pageable pageable){
         List<Client> clients = csl.listAllClients();
         return new ModelAndView("client").addObject("clients", clients);
     }
+
+
 
 
 }
