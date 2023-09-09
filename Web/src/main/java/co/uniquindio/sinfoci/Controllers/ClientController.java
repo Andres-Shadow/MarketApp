@@ -16,16 +16,23 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/client.html")
 public class ClientController {
 
-    @Autowired
-    private ClientServiceImpl csl;
+    private final ClientServiceImpl csl;
 
-    @GetMapping("")
+    public ClientController(ClientServiceImpl csl) {
+        this.csl = csl;
+    }
+
+    @GetMapping("/client.html")
     public ModelAndView listarClientes(@PageableDefault(sort = "name", size = 5)Pageable pageable){
         List<Client> clients = csl.listAllClients();
         return new ModelAndView("client").addObject("clients", clients);
+    }
+
+    @GetMapping("/client/client_form.html")
+    public String index() {
+        return "client_form";
     }
 
 
