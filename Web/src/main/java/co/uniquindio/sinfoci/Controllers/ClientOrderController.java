@@ -14,15 +14,19 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/client_order.html")
 public class ClientOrderController {
 
     @Autowired
     private ClientOrderImpl col;
 
-    @GetMapping("")
-    public ModelAndView listarClientes(@PageableDefault(sort = "name", size = 5) Pageable pageable){
+    @GetMapping("/client_order.html")
+    public ModelAndView listarOrdenes(@PageableDefault(sort = "name", size = 5) Pageable pageable){
         List<ClientOrder> orders = col.listAllOrders();
         return new ModelAndView("client_order").addObject("orders", orders);
+    }
+
+    @GetMapping("client_order/client_order_form.html")
+    public String goToForm(){
+        return "client_order_form";
     }
 }

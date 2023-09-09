@@ -16,15 +16,19 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product.html")
 public class ProductController {
 
     @Autowired
     private ProductImpl pdl;
 
-    @GetMapping("")
-    public ModelAndView listarClientes(@PageableDefault(sort = "name", size = 5) Pageable pageable){
+    @GetMapping("/product.html")
+    public ModelAndView listarProductos(@PageableDefault(sort = "name", size = 5) Pageable pageable){
         List<Product> products = pdl.listAllProducts();
         return new ModelAndView("product").addObject("products", products);
+    }
+
+    @GetMapping("/product/product_form.html")
+    public String goToForm(){
+        return "product_form";
     }
 }
