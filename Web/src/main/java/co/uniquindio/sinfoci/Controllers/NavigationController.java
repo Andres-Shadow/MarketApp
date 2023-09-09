@@ -9,7 +9,7 @@ public class NavigationController {
     /*@GetMapping("/client.html")
     public String client() {
         return "client";
-    }**/
+    }
 
     @GetMapping("/client_order.html")
     public String clientOrder() {
@@ -19,5 +19,5 @@ public class NavigationController {
     @GetMapping("/product.html")
     public String product(){
         return "product";
-    }
+    }*/
 }

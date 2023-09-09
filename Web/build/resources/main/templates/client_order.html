@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Cliente</title>
+  <title>Página Cliente</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,29 +16,53 @@
       height: 100vh;
     }
 
-    .header {
+    .page-container {
+      background-color: transparent; /* Fondo transparente */
       text-align: center;
-      background-color: #0073e6;
-      color: white;
-      font-weight: bold;
-      padding: 10px;
-      width: 160px; /* Ancho igual al de los botones */
-      border-radius: 10px 10px 0 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      background-color: #b3e0ff; /* Azul claro */
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px; /* Separación entre divs */
+      text-align: center;
+    }
+
+    .container h2 {
+      margin: 0;
+    }
+
+    .table-container {
+      border: 1px solid white;
+      background-color: #b3e0ff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .table-container table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left; /* Justificado a la izquierda */
+    }
+
+    .table-container th,
+    .table-container td {
+      border: 1px solid white;
+      padding: 8px;
+      color: black; /* Texto negro */
     }
 
     .button-container {
-      text-align: center;
       margin-top: 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      border-radius: 0 0 10px 10px;
-      padding: 20px;
     }
 
     .button-container button {
       padding: 10px 20px;
       background-color: #00bcd4;
-      color: white;
+      color: black;
       border: none;
       margin: 5px;
       border-radius: 5px;
@@ -47,21 +70,60 @@
     }
 
     .button-container button:hover {
-      background-color: #0097a7;
+      background-color: #0056b3;
+    }
+
+    /* Estilo para la lista sin estilos (list-unstyled) */
+    .list-unstyled {
+      list-style-type: none; /* Elimina los puntos/balas de la lista */
+      padding-left: 0; /* Elimina el espacio de sangría a la izquierda */
+    }
+
+    /* Estilo para los elementos de la lista */
+    .list-unstyled li {
+      text-align: left; /* Texto justificado a la izquierda */
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-<div class="header">
-  <a href="/">
-    CLIENT ORDER DATA
-  </a>
-</div>
-<div class="button-container">
-  <button>Create</button>
-  <button>Update</button>
-  <button>Delete</button>
-  <button>List</button>
+<div class="page-container">
+  <div class="container">
+    <h2>ClientOrder Data</h2>
+  </div>
+
+  <div class="container">
+    <ul class="list-unstyled"> <!-- Usamos la clase "list-unstyled" -->
+      <li>Id</li>
+      <li>Name</li>
+      <li>Price</li>
+    </ul>
+  </div>
+
+  <div class="button-container">
+    <button>Create</button>
+    <button>Delete</button>
+    <button>Update</button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Aquí puedes iterar para mostrar los datos -->
+      <tr th:each="order: ${orders}" th:object="${order}">
+        <td><div th:text="*{name}"></div></td>
+        <td><div th:text="*{price}"></div></td>
+      </tr>
+      <!-- Fin de la iteración -->
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
 </html>
