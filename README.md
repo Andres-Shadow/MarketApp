@@ -30,7 +30,7 @@ Posterior a esto se debe configurar la contraseña utilizada en el archivo Appli
 
 Business/src/main/resources/application.yaml
 
-# Ejecución del proeycto
+# Ejecución del proyecto
 
 Para ejecutar el proyecto se debe ir a la clase WebApplication úbicada en la siguiente ruta:
 
